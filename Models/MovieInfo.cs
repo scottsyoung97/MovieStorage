@@ -8,12 +8,13 @@ namespace MovieStorage.Models
 {
     public class MovieInfo
     {
+        [Key]
+        public int MovieId { get; set; }
         [Required]
         public string Category { get; set; }
 
         [Required]
         public string Title { get; set; }
-
         [Required]
         public string Year { get; set; }
 

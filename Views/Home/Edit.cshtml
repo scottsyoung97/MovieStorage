@@ -2,23 +2,24 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    ViewBag.Title = "Add Movie";
+    ViewBag.Title = "Edit Movie";
 }
 
 @model MovieStorage.Models.MovieInfo
 
-<form asp-action="Info" method="post">
+<form asp-action="Edit" method="post">
+    <input hidden asp-for="MovieId" placeholder="@Model.MovieId" />
     <label asp-for="Category">Category</label>
-    <input asp-for="Category"/>
-    <br /><br/>
+    <input asp-for="Category" placeholder="@Model.Category"/>
+    <br /><br />
     <label asp-for="Title">Title</label>
-    <input asp-for="Title"/>
+    <input asp-for="Title" placeholder="@Model.Title"/>
     <br /><br />
     <label asp-for="Year">Year</label>
-    <input asp-for="Year"/>
+    <input asp-for="Year" placeholder="@Model.Year"/>
     <br /><br />
     <label asp-for="Director">Director</label>
-    <input asp-for="Director"/>
+    <input asp-for="Director" placeholder="@Model.Director"/>
     <br /><br />
     <label asp-for="Rating">Rating</label>
     <select asp-for="Rating">
@@ -37,12 +38,12 @@
     </select>
     <br /><br />
     <label asp-for="LentTo">Lent To</label>
-    <input asp-for="LentTo"/>
+    <input asp-for="LentTo" placeholder="@Model.LentTo"/>
     <br /><br />
     <label asp-for="Notes">Notes</label>
-    <input asp-for="Notes" maxlength="25"/>
+    <input asp-for="Notes" maxlength="25" placeholder="@Model.Notes"/>
     <br /><br />
-    <button type="submit">Add Movie</button>
+    <button type="submit">Save Changes</button>
     <div asp-validation-summary="All"></div>
 </form>
 
